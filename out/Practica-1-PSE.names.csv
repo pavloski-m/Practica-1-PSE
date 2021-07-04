@@ -1,0 +1,177 @@
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0004a4 00000044 t Board_LED_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0004e8 00000040 t Board_TEC_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000528 00000040 t Board_GPIO_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000568 00000030 t Board_ADC_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000598 00000038 t Board_SPI_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0005d0 00000024 t Board_I2C_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a58 00000008 t GpioButtons
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a60 0000000c t GpioLeds
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a6c 00000012 t GpioPorts
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a84 00000004 t InitClkStates
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a88 00000074 t pinmuxing
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000000 00000038 d i2c
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00077c 0000002c t Chip_UART_GetIndex
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001afc 00000008 t UART_BClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001b04 00000008 t UART_PClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0008d8 00000014 t Chip_ADC_GetClockIndex
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0008ec 00000032 t getClkDiv
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0009b4 000000a0 t pll_calc_divs
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000a54 0000010c t pll_get_frac
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000b60 0000004c t Chip_Clock_FindBaseClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000dd4 00000022 t Chip_Clock_GetDivRate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000048 00000008 b audio_usb_pll_freq
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001b18 0000006c t periph_to_base
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001b84 00000048 t InitClkStates
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00109c 00000014 t Chip_SSP_GetClockIndex
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0010b0 00000018 t Chip_SSP_GetPeriphClockIndex
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000038 00000004 d ClockSpeed
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000050 00000004 b callBackFuncParams
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000058 00000008 b tickCounter
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000060 00000004 b tickHookFunction
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001270 00000034 t gpioObtainPinInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000064 00000004 b g_hUsb
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cb8 t __init_array_end
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cb4 b __preinit_array_end
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cb4 t __init_array_start
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cb4 b __preinit_array_start
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000bf8 0000001c T Chip_Clock_GetDividerSource
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000130 00000002 W DebugMon_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a080000 A __top_MFlashA512
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00036a 0000000e T leerTecla
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0000c0 T __section_table_start
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W I2C0_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000648 00000008 T __stdio_init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00160c 0000003e T delayRead
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000126 00000002 W HardFault_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000000 A __vectors_start__
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000992 0000000c T Chip_ADC_SetResolution
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001244 0000002c T SysTick_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W SPIFI_ADCHS_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000416 00000002 W initialise_monitor_handles
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W SDIO_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000132 00000002 W PendSV_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000124 00000002 W NMI_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cc0 R __exidx_end
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0000fc T __data_section_table_end
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W UART1_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:53ff761a A __valid_user_code_checksum
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cc0 R _etext
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W USB1_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W TIMER3_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000e76 0000000c T Chip_Clock_GetBaseClocktHz
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W UART0_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000154 00000012 T bss_init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W SGPIO_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001668 T __aeabi_uldivmod
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000070 ? _noinit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000068 00000004 B SystemCoreClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0007a8 00000054 T Chip_UART_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W ADC0_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00012c 00000002 W UsageFault_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000ef4 0000004c T Chip_Clock_GetRate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000688 0000006c T Board_SetupClocking
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:20008000 A __top_RamAHB32
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001698 000002d0 T __udivmoddi4
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a54 00000004 T ExtRateIn
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W IntDefaultHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W SSP0_SSP1_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000300 T __CRP_WORD_END__
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001cb8 R __exidx_start
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0002fc 00000004 T CRP_WORD
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00196c 00000048 T __libc_init_array
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W ADC1_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W RIT_WDT_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W FLASH_EEPROM_ATIMER_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000618 00000030 T Board_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0004a2 00000002 W _init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0000c0 T __data_section_table
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W RTC_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000070 B _ebss
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W TIMER0_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000418 00000088 T Reset_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0011c8 0000007c T tickInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:20010000 A __top_RamAHB_ETB16
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000744 00000038 T Chip_I2C_SetClockRate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W LCD_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000300 0000001a T encenderLed
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000bac 0000004c T Chip_Clock_EnableCrystal
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W M4_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10008000 A __top_RamLoc32
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000136 0000001e T data_init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000720 00000024 T Chip_I2C_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000d68 0000006c T Chip_Clock_GetMainPLLHz
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001bcc 000000e6 T gpioPinsInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0010c8 00000012 T Chip_SSP_SetClockRate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000e50 00000026 T Chip_Clock_GetBaseClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000048 B _bss
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000960 00000032 T Chip_ADC_SetSampleRate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0015ec 00000020 T delayInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0010da 0000003e T Chip_SSP_SetBitRate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W I2S0_I2S1_QEI_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000f40 00000002 T Chip_GPIO_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001a80 00000004 T OscRateIn
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000070 ? _end_noinit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10008000 A _vStackTop
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000124 T __bss_section_table_end
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0012a4 000001ac T gpioInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001968 00000002 W __aeabi_ldiv0
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001524 0000001c T USB0_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W SCT_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000c14 0000001c T Chip_Clock_GetDividerDivisor
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0002fc T __CRP_WORD_START__
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0019b4 000000a0 T memset
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000128 00000002 W MemManage_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000378 0000009e T main
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:2000c000 A __top_RamAHB16
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1008a000 A __top_RamLoc40
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00012e 00000002 W SVC_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00031a 00000050 T apagarLeds
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000e84 0000003c T Chip_Clock_EnableOpts
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000c30 000000b8 T Chip_Clock_GetClockInputHz
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000ce8 00000080 T Chip_Clock_CalcMainPLLValue
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001150 00000038 T SystemInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0015b4 00000038 T delay
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0000fc T __bss_section_table
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001450 0000006a T gpioWrite
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0004a0 00000002 W _fini
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000920 00000040 T Chip_ADC_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1000006c 00000004 B g_pUsbApi
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000650 00000038 T Board_SetupMuxing
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0007fc 000000dc T Chip_UART_SetBaudFDR
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0011a4 0000000c T tickRead
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000040 00000008 D tickRateMS
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W SPI_DAC_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W ETH_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000000 ? _end_uninit_RESERVED
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1b000000 T __core_m0app_START__
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W CAN0_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000000 D _data
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000070 B _pvHeapStart
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W UART2_CAN1_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000124 T __section_table_end
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001118 00000038 T Chip_SSP_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0005f4 00000024 T Board_Debug_Init
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:10000048 D _edata
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000700 00000020 T Chip_I2C_EventHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W M0SUB_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000f44 00000158 T Chip_SetupCoreClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000000 00000040 T g_pfnVectors
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0009a0 00000014 T SystemCoreClockUpdate
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W DMA_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W EVRT_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1b080000 A __top_MFlashB512
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001968 00000002 W __aeabi_idiv0
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00012a 00000002 W BusFault_Handler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000ec0 00000034 T Chip_Clock_Enable
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W UART3_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a00164c 0000001c T delayWrite
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W MCPWM_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0014ba 00000068 T gpioRead
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001540 00000074 T boardInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000040 00000080 T g_pfnVendorVectors
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W GINT1_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0011b0 00000018 T tickPowerSet
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000df8 00000058 T Chip_Clock_SetBaseClock
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a001188 0000001c T cyclesCounterInit
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a000166 00000002 W GPIO4_IRQHandler
+practica/Practica-1-PSE/out/Practica-1-PSE.elf:1a0006f4 0000000c T Board_SystemInit
