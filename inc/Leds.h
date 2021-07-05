@@ -23,7 +23,7 @@ extern "C" {
 
 /*=====[Definition macros of public constants]===============================*/
 
-#define leerTecla(tecla) !gpioRead(tecla)
+#define leerTecla(tecla) !gpioRead(tecla)     //en lugar de leer tecla en la función se hace este #define
 
 /*=====[Public function-like macros]=========================================*/
 
@@ -41,7 +41,7 @@ bool_t  encenderLed(gpioMap_t led);
 
 bool_t  apagarLeds();
 
-void activarSecuencia(punteroSecuencias *ptr_seq1);
+void activarSecuencia(punteroSecuencias *ptrSeq1);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
