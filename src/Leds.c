@@ -6,12 +6,14 @@
 
 /*=====[Inclusions of function dependencies]=================================*/
 
-
-#include "sapi.h"
+#include "Leds.h"
 
 /*=====[Definition macros of private constants]==============================*/
 
 /*=====[Definitions of extern global variables]==============================*/
+
+int8_t sequence = 0;
+delay_t delayLed;
 
 /*=====[Definitions of public global variables]==============================*/
 
@@ -37,29 +39,43 @@ bool_t  apagarLeds(){     /* apagar todos los leds */
 
     if( gpioRead(LEDB) == 0 && gpioRead(LED1) == 0 && gpioRead(LED2) == 0 && gpioRead(LED3) == 0){
     	return 1;
-    } else return 0;
+    } else {return 0;}
 
 }
 
-bool_t leerTecla (gpioMap_t tecla){    /* leer el estado de una tecla.  Devuelve por valor el estado de la tecla pulsada (verdadero) o liberada (falso)*/
+//bool_t leerTecla (gpioMap_t tecla){    /* leer el estado de una tecla.  Devuelve por valor el estado de la tecla pulsada (verdadero) o liberada (falso)*/
+//
+//	return (!gpioRead(tecla));
+//
+//}
 
-	return (!gpioRead(tecla));
+gpioMap_t* activarSecuencia(gpioMap_t *psecuencia1, gpioMap_t *ini, gpioMap_t *fin){       /* psecuencia apunta a una secuencia de leds o arreglo de gpioMap_t */
 
+	if ( delayRead( &delayLed ) ){
+		 if ( !sequence ){
+			 psecuencia1 += 1;
+		 }
+		 else{
+			 psecuencia1 -= 1;
+		 }
+	  }
+
+	  if ( psecuencia1 < ini ){
+		  psecuencia1 = fin;
+	  }
+	  if ( psecuencia1 > fin ){
+		  psecuencia1 = ini;
+	  }
+
+	  apagarLeds();
+	  encenderLed(*psecuencia1);
+
+	  return psecuencia1;
 }
 
-void activarSecuencia(gpioMap_t * psecuencia){ /* psecuencia apunta a una secuencia de leds o arreglo de gpioMap_t */
-
-}
 
 int main(void){
 
-
-	gpioMap_t secuencia1[] = {LED1, LED2, LED3, LEDB};
-	gpioMap_t secuencia2[] = {LED2, LEDB, LED1, LED3};
-
-	gpioMap_t * psecuencia = secuencia1;
-
-	activarSecuencia(psecuencia);
 
    /* ------------- INICIALIZACIONES ------------- */
 
@@ -67,67 +83,58 @@ int main(void){
    boardConfig();
 
    /* Variable de Retardo no bloqueante */
-   delay_t delayLed;
+   //delay_t delayLed;
 
    /* Inicializar Retardo no bloqueante con tiempo en milisegundos
       (500ms = 0,5s) */
    delayConfig( &delayLed, 500 );
 
+   /* Declaración de variables locales */
    int8_t i = 3;
-   uint8_t sequence = 0;
-   bool_t respuesta = 0;
+   uint8_t cant = 0;
+   gpioMap_t *pInicio, *pFinal, *psecuencia;
 
+
+   gpioMap_t secuencia1[] = {LED1, LED2, LED3, LEDB};
+   gpioMap_t secuencia2[] = {LED2, LEDB, LED1, LED3};
+
+   psecuencia = secuencia1;
+   cant = sizeof(secuencia1)/sizeof(gpioMap_t);
+   pInicio = secuencia1;
+   pFinal = &psecuencia[cant-1];
 
 
    /* ------------- REPETIR POR SIEMPRE ------------- */
    while(1) {
 
-int8_t tecla = 0;
+	int8_t tecla = 0;
 
-for (int j=1; j<5; j++){
-	tecla += j * leerTecla(35 + j);
-}
-
-switch(tecla){
-
-	case 1:
-		sequence=1;
-		break;
-	case 2:
-		 delayWrite( &delayLed, 150 );
-		 break;
-	case 3:
-		 delayWrite( &delayLed, 500 );
-		 break;
-	case 4:
-		sequence=0;
-		break;
-}
+	for (int j=1; j<5; j++){
+		tecla += j * leerTecla(TEC1 + j - 1);
+	}
 
 
+	switch(tecla){
 
-      /* delayRead retorna TRUE cuando se cumple el tiempo de retardo */
-      if ( delayRead( &delayLed ) ){
-         if ( !sequence ){
-            i--;
-         }
-         else{
-            i++;
-         }
-      }
-
-
-      if ( i < 0 ){
-         i = 3;
-      }
-      if ( i > 3 ){
-         i = 0;
-      }
+		case 1:
+			sequence=1;
+			break;
+		case 2:
+			 delayWrite( &delayLed, 150 );
+			 break;
+		case 3:
+			 delayWrite( &delayLed, 500 );
+			 break;
+		case 4:
+			sequence=0;
+			break;
+	}
 
 
-      respuesta = encenderLed(42 + i);
-      delay(100);
-      respuesta = apagarLeds();
+  psecuencia=activarSecuencia(psecuencia, pInicio, pFinal);
+
+
+/* delayRead retorna TRUE cuando se cumple el tiempo de retardo */
 
 
    }

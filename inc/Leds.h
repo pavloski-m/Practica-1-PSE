@@ -13,6 +13,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "sapi.h"
 
 /*=====[C++ - begin]=========================================================*/
 
@@ -22,11 +23,15 @@ extern "C" {
 
 /*=====[Definition macros of public constants]===============================*/
 
+#define leerTecla(tecla) !gpioRead(tecla)
+
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
+
+
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
