@@ -29,8 +29,8 @@ extern "C" {
 
 /*=====[Definitions of public data types]====================================*/
 
-typedef struct {
-	gpioMap_t *pSeq;
+typedef struct {              // definimos este struct para manejo de los punteros a secuencias
+	gpioMap_t *pDesplaza;
 	gpioMap_t *pInicio;
 	gpioMap_t *pFinal;
 }punteroSecuencias;

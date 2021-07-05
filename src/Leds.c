@@ -38,35 +38,35 @@ int main(void){
    int8_t i = 3;
    uint8_t cant = 0;
 
-//----------DECLARO SECUENCIAS---------------------------------
-   gpioMap_t secuencia1[] = {LED1, LED2, LED3, LEDB};
-   gpioMap_t secuencia2[] = {LED2, LEDB, LED1, LED3};
+//----------SECUENCIAS---------------------------------
 
+    gpioMap_t secuencia1[] = {LED1, LED2, LED3, LEDB};
+    gpioMap_t secuencia2[] = {LED2, LEDB, LED1, LED3, LEDG};
 
-
-//-----------DECLARO PUNTEROS----------------------------------
-   //gpioMap_t *pInicio, *pFinal, *psecuencia;
 
 
 //----------SELECCIÓN DE SECUENCIAS------------------------------
-   //psecuencia = secuencia1;
-   //pInicio = secuencia1;
-   //pFinal = &psecuencia[cant-1];
 
-   cant = sizeof(secuencia1)/sizeof(gpioMap_t);
-   punteroSecuencias punteros1 = {.pSeq = secuencia1, .pInicio = &secuencia1[0], .pFinal = &secuencia1[cant-1]};
+    cant = sizeof(secuencia1)/sizeof(gpioMap_t);                 // Se calcula cantidad de items de secuencia
 
-   /* ------------- REPETIR POR SIEMPRE ------------- */
-   while(1) {
+    punteroSecuencias ptrSec1 = {.pDesplaza = secuencia1, .pInicio = &secuencia1[0], .pFinal = &secuencia1[cant-1]}; // Se instancia el struct con valores de punteros
 
 
-//-----------------LECTURA DE TECLAS-----------------------
+    /* ------------- REPETIR POR SIEMPRE ------------- */
+
+    while(1) {
+
+
+//-----------------LECTURA DE TECLAS Y ACCIÓN DE TECLAS -----------------------
 	int8_t tecla = 0;
+
 	for (int j=1; j<5; j++){
 		tecla += j * leerTecla(TEC1 + j - 1);
+		if (tecla > 0){                                         //Se pone para evitar el error de presionar "TEC1" y "TEC2" juntas y que entienda "TEC3"
+			break;
+		}
 	}
 
-//-----------------ACCION DE TECLAS------------------------
 	switch(tecla){
 
 		case 1:
@@ -85,14 +85,18 @@ int main(void){
 
 /* delayRead retorna TRUE cuando se cumple el tiempo de retardo */
 	if ( delayRead( &delayLed ) ){
-  activarSecuencia(&punteros1);
+
+	  activarSecuencia(&ptrSec1);
+
 	}
 
    }
 
+
  /* NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa no es llamado
       por ningun S.O. */
-   return 0 ;
+
+    return 0 ;
 }
 
 
@@ -100,17 +104,18 @@ int main(void){
 
 bool_t  encenderLed(gpioMap_t led){
 
-	gpioWrite(led, ON);
+	if (led >= 40 || led <= 45){
+		gpioWrite(led, ON);
 
-	if(gpioRead(led)){
-		return 1;
-	} else return 0;
+		if(gpioRead(led)){
+		  return 1;
+	    } else {return 0;}
+	}else {return 0;}
 
 }
 
 
 bool_t  apagarLeds(){     /* apagar todos los leds */
-
 
 	gpioWrite( LEDB, OFF );
     gpioWrite( LED1, OFF );
@@ -128,21 +133,21 @@ void activarSecuencia(punteroSecuencias *ptr_seq1){       /* psecuencia apunta a
 
 
 	if ( !sequence ){
-		 ptr_seq1->pSeq ++;
+	 ptr_seq1->pDesplaza++;
 	}
 	else{
-		ptr_seq1->pSeq --;
+	 ptr_seq1->pDesplaza--;
 	}
 
-	if ( ptr_seq1->pSeq < ptr_seq1->pInicio ){
-		ptr_seq1->pSeq = ptr_seq1->pFinal;
+	if ( ptr_seq1->pDesplaza < ptr_seq1->pInicio ){
+	 ptr_seq1->pDesplaza = ptr_seq1->pFinal;
 	}
-	if ( ptr_seq1->pSeq > ptr_seq1->pFinal ){
-		ptr_seq1->pSeq = ptr_seq1->pInicio;
+	if ( ptr_seq1->pDesplaza > ptr_seq1->pFinal ){
+	 ptr_seq1->pDesplaza = ptr_seq1->pInicio;
 	}
 
 	apagarLeds();
-	encenderLed(*(ptr_seq1->pSeq));
+	encenderLed(*(ptr_seq1->pDesplaza));
 
 
 }
