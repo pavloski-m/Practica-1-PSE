@@ -29,13 +29,19 @@ extern "C" {
 
 /*=====[Definitions of public data types]====================================*/
 
+typedef struct {
+	gpioMap_t *pSeq;
+	gpioMap_t *pInicio;
+	gpioMap_t *pFinal;
+}punteroSecuencias;
+
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
 bool_t  encenderLed(gpioMap_t led);
 
 bool_t  apagarLeds();
 
-gpioMap_t* activarSecuencia(gpioMap_t *psecuencia1, gpioMap_t *ini, gpioMap_t *fin);
+void activarSecuencia(punteroSecuencias *ptr_seq1);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 

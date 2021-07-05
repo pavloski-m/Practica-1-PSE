@@ -38,27 +38,35 @@ int main(void){
    int8_t i = 3;
    uint8_t cant = 0;
 
-
-   gpioMap_t *pInicio, *pFinal, *psecuencia;
+//----------DECLARO SECUENCIAS---------------------------------
    gpioMap_t secuencia1[] = {LED1, LED2, LED3, LEDB};
    gpioMap_t secuencia2[] = {LED2, LEDB, LED1, LED3};
 
-   psecuencia = secuencia1;
-   cant = sizeof(secuencia1)/sizeof(gpioMap_t);
-   pInicio = secuencia1;
-   pFinal = &psecuencia[cant-1];
 
+
+//-----------DECLARO PUNTEROS----------------------------------
+   //gpioMap_t *pInicio, *pFinal, *psecuencia;
+
+
+//----------SELECCIÓN DE SECUENCIAS------------------------------
+   //psecuencia = secuencia1;
+   //pInicio = secuencia1;
+   //pFinal = &psecuencia[cant-1];
+
+   cant = sizeof(secuencia1)/sizeof(gpioMap_t);
+   punteroSecuencias punteros1 = {.pSeq = secuencia1, .pInicio = &secuencia1[0], .pFinal = &secuencia1[cant-1]};
 
    /* ------------- REPETIR POR SIEMPRE ------------- */
    while(1) {
 
-	int8_t tecla = 0;
 
+//-----------------LECTURA DE TECLAS-----------------------
+	int8_t tecla = 0;
 	for (int j=1; j<5; j++){
 		tecla += j * leerTecla(TEC1 + j - 1);
 	}
 
-
+//-----------------ACCION DE TECLAS------------------------
 	switch(tecla){
 
 		case 1:
@@ -75,19 +83,20 @@ int main(void){
 			break;
 	}
 
-	if ( delayRead( &delayLed ) ){
-  psecuencia = activarSecuencia(psecuencia, pInicio, pFinal);
-	}
-
 /* delayRead retorna TRUE cuando se cumple el tiempo de retardo */
-
+	if ( delayRead( &delayLed ) ){
+  activarSecuencia(&punteros1);
+	}
 
    }
 
-   /* NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa no es llamado
+ /* NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa no es llamado
       por ningun S.O. */
    return 0 ;
 }
+
+
+//================================FUNCICONES=================================
 
 bool_t  encenderLed(gpioMap_t led){
 
@@ -98,7 +107,6 @@ bool_t  encenderLed(gpioMap_t led){
 	} else return 0;
 
 }
-
 
 
 bool_t  apagarLeds(){     /* apagar todos los leds */
@@ -116,28 +124,27 @@ bool_t  apagarLeds(){     /* apagar todos los leds */
 }
 
 
+void activarSecuencia(punteroSecuencias *ptr_seq1){       /* psecuencia apunta a una secuencia de leds o arreglo de gpioMap_t */
 
-gpioMap_t* activarSecuencia(gpioMap_t *psecuencia1, gpioMap_t *ini, gpioMap_t *fin){       /* psecuencia apunta a una secuencia de leds o arreglo de gpioMap_t */
+
+	if ( !sequence ){
+		 ptr_seq1->pSeq ++;
+	}
+	else{
+		ptr_seq1->pSeq --;
+	}
+
+	if ( ptr_seq1->pSeq < ptr_seq1->pInicio ){
+		ptr_seq1->pSeq = ptr_seq1->pFinal;
+	}
+	if ( ptr_seq1->pSeq > ptr_seq1->pFinal ){
+		ptr_seq1->pSeq = ptr_seq1->pInicio;
+	}
+
+	apagarLeds();
+	encenderLed(*(ptr_seq1->pSeq));
 
 
-	 if ( !sequence ){
-		 psecuencia1 += 1;
-	 }
-	 else{
-		 psecuencia1 -= 1;
-	 }
-
-	 if ( psecuencia1 < ini ){
-		  psecuencia1 = fin;
-	 }
-	 if ( psecuencia1 > fin ){
-		  psecuencia1 = ini;
-	 }
-
-	 apagarLeds();
-	 encenderLed(*psecuencia1);
-
-	 return psecuencia1;
 }
 
 
