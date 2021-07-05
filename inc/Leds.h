@@ -31,7 +31,11 @@ extern "C" {
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+bool_t  encenderLed(gpioMap_t led);
 
+bool_t  apagarLeds();
+
+gpioMap_t* activarSecuencia(gpioMap_t *psecuencia1, gpioMap_t *ini, gpioMap_t *fin);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
